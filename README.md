@@ -1,2 +1,1 @@
-genai
-project
+Gen-Ai project
