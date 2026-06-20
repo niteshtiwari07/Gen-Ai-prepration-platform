@@ -44,11 +44,11 @@ const prompt = `Generate an interview report for a candidate with the following 
         contents : prompt,
         config:{
             responseMimeType: "application/json",
-            responseJsonSchema: zodToJsonSchema(interviewReportSchema)
+            responseJsonSchema: zodToJsonSchema(interviewReportSchema),
         }
     })
 
-        console.log(JSON.parse(response.text))
+      return JSON.parse(response.text)
 
 }
 
