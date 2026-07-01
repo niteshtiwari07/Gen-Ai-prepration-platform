@@ -1,6 +1,1 @@
-Gen-Ai project 
-
-
-
-
-
+Ai resume checker
