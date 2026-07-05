@@ -1,18 +1,17 @@
-import { createBrowserRouter } from "react-router-dom";
-import Login from "./features/auth/pages/Login";
-import Register from "./features/auth/pages/Register";
+import { RouterProvider } from "react-router"
+import { router } from "./app.routes.jsx"
+import { AuthProvider } from "./features/auth/auth.context.jsx"
+import { InterviewProvider } from "./features/interview/interview.context.jsx"
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Login />
-  },
-  {
-    path: "/login",
-    element: <Login />
-  },
-  {
-    path: "/register",
-    element: <Register />
-  }
-]);
+function App(){
+  
+  return(
+    <AuthProvider>
+      <InterviewProvider>
+        <RouterProvider router={router} />
+      </InterviewProvider>
+    </AuthProvider>
+  )
+}
+
+export default App
