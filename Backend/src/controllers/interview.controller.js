@@ -18,22 +18,14 @@ async function generateInterViewReportController(req, res) {
         selfDescription,
         jobDescription
     })
-// here change \
-     console.log("AI Response:");
-     console.log(interViewReportByAi);
-
 
     const interviewReport = await interviewReportModel.create({
-    user: req.user.id,
-    resume: resumeContent.text,
-    selfDescription,
-    jobDescription,
-
-    title: interViewReportByAi.title || interViewReportByAi.job_title || "Software Engineer",
-    matchScore: interViewReportByAi.matchScore || interViewReportByAi.overall_score || 0,
-
-    ...interViewReportByAi
-});
+        user: req.user.id,
+        resume: resumeContent.text,
+        selfDescription,
+        jobDescription,
+        ...interViewReportByAi
+    })
 
     res.status(201).json({
         message: "Interview report generated successfully.",
@@ -53,7 +45,6 @@ async function getInterviewReportByIdController(req, res) {
 
     if (!interviewReport) {
         return res.status(404).json({
-            
             message: "Interview report not found."
         })
     }

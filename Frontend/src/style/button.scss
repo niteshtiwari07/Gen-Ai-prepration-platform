@@ -2,16 +2,16 @@
 
     border: none;
     outline: none;
-    padding-inline: 1.5 rem;
-    padding-block: 0.75;
+    padding-inline: 1.5rem;
+    padding-block: 0.75rem;
     border-radius: 1rem;
     cursor: pointer;
 
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     &.primary-button{
         background-color: #e1034d;
-        color:white;
+        color: white;
     }
 
     &:active{
