@@ -2,7 +2,6 @@ const express = require("express")
 const cookieParser = require("cookie-parser")
 const cors = require("cors")
 
-console.log("APP VERSION 5174 LOADED")
 
 const app = express()
 
