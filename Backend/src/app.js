@@ -1,7 +1,7 @@
 const express = require("express")
 const cookieParser = require("cookie-parser")
 const cors = require("cors")
-
+const path = require("path")
 
 const app = express()
 
@@ -18,5 +18,13 @@ const interviewRouter = require("./routes/interview.routes")
 
 app.use("/api/auth", authRouter)
 app.use("/api/interview", interviewRouter)
+
+const frontendPath = path.join(__dirname, "../../frontend/dist")
+
+app.use(express.static(frontendPath))
+
+app.get("/{*any}", (req, res) => {
+    res.sendFile(path.join(frontendPath, "index.html"))
+})
 
 module.exports = app
