@@ -19,11 +19,11 @@ const interviewRouter = require("./routes/interview.routes")
 app.use("/api/auth", authRouter)
 app.use("/api/interview", interviewRouter)
 
-const frontendPath = path.join(__dirname, "../../frontend/dist")
+const frontendPath = path.join(__dirname, "../../Frontend/dist")
 
 app.use(express.static(frontendPath))
 
-app.get("/{*any}", (req, res) => {
+app.use((req, res) => {
     res.sendFile(path.join(frontendPath, "index.html"))
 })
 
