@@ -1,7 +1,6 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const path = require("path");
 
 const app = express();
 
@@ -10,10 +9,7 @@ app.use(cookieParser());
 
 app.use(
     cors({
-        origin: [
-            "http://localhost:5173",
-            "https://gen-ai-prepration-platform-33bvavej8-nitby.vercel.app"
-        ],
+        origin: true,
         credentials: true,
     })
 );
@@ -24,12 +20,5 @@ const interviewRouter = require("./routes/interview.routes");
 app.use("/api/auth", authRouter);
 app.use("/api/interview", interviewRouter);
 
-const frontendPath = path.join(__dirname, "../../Frontend/dist");
-
-app.use(express.static(frontendPath));
-
-app.use((req, res) => {
-    res.sendFile(path.join(frontendPath, "index.html"));
-});
 
 module.exports = app;
