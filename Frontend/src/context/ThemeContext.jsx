@@ -1,35 +1,33 @@
-import { useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-import Navbar from "../components/landing/Navbar";
-import Hero from "../components/landing/Hero";
-import Trusted from "../components/landing/Trusted";
-import Features from "../components/landing/Features";
-import HowItWorks from "../components/landing/HowItWorks";
-import WhyChoose from "../components/landing/WhyChoose";
-import Testimonials from "../components/landing/Testimonials";
-import FAQ from "../components/landing/FAQ";
-import CTA from "../components/landing/CTA";
-import Footer from "../components/landing/Footer";
+const ThemeContext = createContext();
 
-const LandingPage = () => {
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "light");
-  }, []);
+export const ThemeProvider = ({ children }) => {
+    const [theme, setTheme] = useState(() => {
+        return localStorage.getItem("theme") || "dark";
+    });
 
-  return (
-    <>
-      <Navbar />
-      <Hero />
-      <Trusted />
-      <Features />
-      <HowItWorks />
-      <WhyChoose />
-      <Testimonials />
-      <FAQ />
-      <CTA />
-      <Footer />
-    </>
-  );
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme((prevTheme) =>
+            prevTheme === "dark" ? "light" : "dark"
+        );
+    };
+
+    return (
+        <ThemeContext.Provider
+            value={{
+                theme,
+                toggleTheme,
+            }}
+        >
+            {children}
+        </ThemeContext.Provider>
+    );
 };
 
-export default LandingPage;
+export const useTheme = () => useContext(ThemeContext);
