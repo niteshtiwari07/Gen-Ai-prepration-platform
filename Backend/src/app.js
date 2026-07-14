@@ -1,30 +1,35 @@
-const express = require("express")
-const cookieParser = require("cookie-parser")
-const cors = require("cors")
-const path = require("path")
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+const path = require("path");
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use(cookieParser())
+app.use(express.json());
+app.use(cookieParser());
 
-app.use(cors({
-    origin: true,
-    credentials: true
-}))
+app.use(
+    cors({
+        origin: [
+            "http://localhost:5173",
+            "https://YOUR-FRONTEND.vercel.app"
+        ],
+        credentials: true,
+    })
+);
 
-const authRouter = require("./routes/auth.routes")
-const interviewRouter = require("./routes/interview.routes")
+const authRouter = require("./routes/auth.routes");
+const interviewRouter = require("./routes/interview.routes");
 
-app.use("/api/auth", authRouter)
-app.use("/api/interview", interviewRouter)
+app.use("/api/auth", authRouter);
+app.use("/api/interview", interviewRouter);
 
-const frontendPath = path.join(__dirname, "../../Frontend/dist")
+const frontendPath = path.join(__dirname, "../../Frontend/dist");
 
-app.use(express.static(frontendPath))
+app.use(express.static(frontendPath));
 
 app.use((req, res) => {
-    res.sendFile(path.join(frontendPath, "index.html"))
-})
+    res.sendFile(path.join(frontendPath, "index.html"));
+});
 
-module.exports = app
+module.exports = app;

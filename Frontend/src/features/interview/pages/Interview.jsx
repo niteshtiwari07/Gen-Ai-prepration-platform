@@ -49,7 +49,7 @@ const RoadMapDay = ({ day }) => (
             {day.tasks.map((task, i) => (
                 <li key={i}>
                     <span className='roadmap-day__bullet' />
-                    {task}
+                    {task}n
                 </li>
             ))}
         </ul>
