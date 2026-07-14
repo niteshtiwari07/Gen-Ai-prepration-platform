@@ -8,8 +8,14 @@ import Testimonials from "../components/landing/Testimonials";
 import FAQ from "../components/landing/FAQ";
 import CTA from "../components/landing/CTA";
 import Footer from "../components/landing/Footer";
+import { useEffect } from "react";
 
 const LandingPage = () => {
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", "light");
+  }, []);
+
   return (
     <>
       <Navbar />
