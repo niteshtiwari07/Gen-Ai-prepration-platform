@@ -48,9 +48,7 @@ const Hero = () => {
             Get Started
           </Link>
 
-          <Link to="/login" className="secondary-btn">
-            Login
-          </Link>
+          
 
         </div>
 
