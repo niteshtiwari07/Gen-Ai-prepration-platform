@@ -12,7 +12,7 @@ app.use(
     cors({
         origin: [
             "http://localhost:5173",
-            "https://YOUR-FRONTEND.vercel.app"
+            "https://gen-ai-prepration-platform-33bvavej8-nitby.vercel.app"
         ],
         credentials: true,
     })
