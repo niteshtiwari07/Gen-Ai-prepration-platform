@@ -56,6 +56,7 @@ const Hero = () => {
 
       <div className="hero-right">
 
+
         <div className="dashboard-card">
 
           <div className="dashboard-header">
