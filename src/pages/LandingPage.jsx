@@ -13,9 +13,10 @@ import { useEffect } from "react";
 const LandingPage = () => {
 
   useEffect(() => {
+    console.log("SETTING LIGHT THEME");
     document.documentElement.setAttribute("data-theme", "light");
-  }, []);
-
+    localStorage.setItem("theme", "light");
+}, []);
   return (
     <>
       <Navbar />

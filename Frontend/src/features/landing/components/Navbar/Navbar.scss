@@ -3,9 +3,9 @@
     top: 0;
     z-index: 1000;
     width: 100%;
-    background: rgba(15, 23, 42, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid #e5e7eb;
 
     .container {
         max-width: 1200px;
@@ -23,7 +23,7 @@
         gap: 10px;
 
         text-decoration: none;
-        color: white;
+        color: #111827;
 
         font-size: 24px;
         font-weight: 700;
@@ -40,11 +40,11 @@
 
         a {
             text-decoration: none;
-            color: #d1d5db;
-            transition: .3s;
+            color: #4b5563;
+            transition: 0.3s;
 
             &:hover {
-                color: white;
+                color: #111827;
             }
         }
     }
@@ -61,18 +61,18 @@
         }
 
         .login-btn {
-            color: white;
-            border: 1px solid rgba(255,255,255,.15);
+            color: #111827;
+            border: 1px solid #d1d5db;
 
             &:hover {
-                background: rgba(255,255,255,.08);
+                background: #f3f4f6;
             }
         }
 
         .primary-btn {
             background: #6366f1;
             color: white;
-            transition: .3s;
+            transition: 0.3s;
 
             &:hover {
                 background: #4f46e5;
@@ -82,19 +82,15 @@
 }
 
 @media (max-width: 900px) {
-
     .navbar {
-
         nav {
             display: none;
         }
 
         .buttons {
-
             .login-btn {
                 display: none;
             }
         }
     }
-
 }
