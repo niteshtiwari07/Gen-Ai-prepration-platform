@@ -10,7 +10,7 @@ const CTA = () => {
         <h2>Ready to Crack Your Next Interview?</h2>
 
         <p>
-          Join MockMate AI today and practice with AI-generated
+          Join MockBuddy AI today and practice with AI-generated
           interview questions tailored to your resume.
         </p>
 

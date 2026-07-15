@@ -13,7 +13,7 @@ const Footer = () => {
 
             <FaRobot />
 
-            <span>MockMate AI</span>
+            <span>MockBuddy AI</span>
 
           </div>
 
@@ -49,7 +49,7 @@ const Footer = () => {
 
       <div className="copyright">
 
-        © 2026 MockMate AI. All rights reserved.
+        © 2026 MockBuddy AI. All rights reserved.
 
       </div>
 

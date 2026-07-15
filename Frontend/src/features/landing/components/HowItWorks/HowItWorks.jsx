@@ -11,7 +11,7 @@ const steps = [
   {
     icon: <FaUserPlus />,
     title: "Create Account",
-    description: "Sign up and securely log in to MockMate AI.",
+    description: "Sign up and securely log in to MockBuddy AI.",
   },
   {
     icon: <FaFileUpload />,
@@ -39,7 +39,7 @@ const HowItWorks = () => {
   return (
     <section className="how-it-works" id="how-it-works">
       <div className="section-title">
-        <h2>How MockMate AI Works</h2>
+        <h2>How MockBuddy AI Works</h2>
         <p>
           Get interview-ready in just a few simple steps.
         </p>

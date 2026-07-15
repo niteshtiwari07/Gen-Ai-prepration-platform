@@ -39,7 +39,7 @@ const Features = () => {
       <div className="section-title">
         <h2>Everything You Need to Prepare</h2>
         <p>
-          MockMate AI provides all the essential tools to help you prepare for
+          MockBuddy AI provides all the essential tools to help you prepare for
           technical interviews with confidence.
         </p>
       </div>
