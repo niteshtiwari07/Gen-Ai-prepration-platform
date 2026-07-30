@@ -22,8 +22,9 @@ const Register = () => {
         });
 
         if (success) {
-            navigate("/dashboard");
-        }
+        alert("Registration successful! Please login.");
+        navigate("/login");
+}
     };
 
     if (loading) {
