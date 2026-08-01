@@ -8,12 +8,14 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(
-    cors({
-        origin: true,
-        credentials: true,
-    })
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://mockbuddy-ai.vercel.app", 
+    ],
+    credentials: true,
+  })
 );
-
 const authRouter = require("./routes/auth.routes");
 const interviewRouter = require("./routes/interview.routes");
 
