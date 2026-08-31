@@ -1,5 +1,5 @@
 require("dotenv").config({
-    quiet: true
+    quiet: true 
 })
 
 const app = require("./src/app")
